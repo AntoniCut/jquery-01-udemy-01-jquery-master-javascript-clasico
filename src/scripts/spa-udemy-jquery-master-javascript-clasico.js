@@ -11,6 +11,7 @@
 
 import { routes00Home } from "/01-udemy/01-jquery-master-javascript-clasico/src/routes/routes-00-home.js";
 import { routes01AprendiendoJQuery } from "/01-udemy/01-jquery-master-javascript-clasico/src/routes/routes-01-aprendiendo-jquery.js";
+import { routes02AprendiendoJQueryUI } from "/01-udemy/01-jquery-master-javascript-clasico/src/routes/routes-02-aprendiendo-jquery-ui.js";
 
 
 
@@ -57,7 +58,8 @@ export const spaUdemyJQueryMasterJavaScriptClasico = ($) => {
     const allRoutes = [
 
         ...routes00Home,
-        ...routes01AprendiendoJQuery
+        ...routes01AprendiendoJQuery,
+        ...routes02AprendiendoJQueryUI
 
     ];
 

@@ -86,8 +86,6 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
 
             }, options);
 
-            console.log("🚀 settings:", settings);
-
 
 
             //  -------------------------------------------
@@ -118,22 +116,30 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
              */
 
             const init = () => {
+                // Elimina barra final del pathname
+                const normalizedPath = window.location.pathname.replace(/\/$/, '').replace(settings.base, '');
+                const initialRoute = settings.routes.find(route =>
+                    route.path.replace(/\/$/, '') === normalizedPath
+                );
 
-                const initialPath = window.location.pathname.replace(settings.base, '');
-                const initialRoute = settings.routes.find(route => route.path === initialPath);
+                if (initialRoute) loadContent(initialRoute);
 
-                console.log('window.location.pathname:', window.location.pathname);
-                console.log('settings.base:', settings.base);
-                console.log('initialPath:', initialPath);
-
-                if (initialRoute)
-                    loadContent(initialRoute);
-
-
-                //  ----------  Guarda el estado inicial para que el botón "Atrás y adelante" funcione correctamente  ----------
                 history.replaceState({ path: window.location.pathname }, '', window.location.pathname);
-                
-            }
+            };
+
+            // const init = () => {
+
+            //     const initialPath = window.location.pathname.replace(settings.base, '');
+            //     const initialRoute = settings.routes.find(route => route.path === initialPath);
+
+            //     if (initialRoute)
+            //         loadContent(initialRoute);
+
+
+            //     //  ----------  Guarda el estado inicial para que el botón "Atrás y adelante" funcione correctamente  ----------
+            //     history.replaceState({ path: window.location.pathname }, '', window.location.pathname);
+
+            // }
 
 
             //  --------------------------------------------------------------------
@@ -150,7 +156,6 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
 
                 //  ----------  Hacemos los menús arrastrables  ----------
                 $layoutNavbar.draggable({
-                    containment: 'parent',
                     scroll: false
                 });
 
@@ -367,7 +372,7 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
              * @param {string} scriptUrl - La URL del script a cargar.
              * @returns {void}
              */
-            
+
             const loadScriptsIfExists = scriptUrl => {
 
                 $.ajax({
@@ -403,7 +408,7 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
              */
 
             const actionsNavbar = () => {
-                
+
 
                 const $layoutNavbar = $('#layoutNavbar .layout__navbar');
 
@@ -414,7 +419,7 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
 
                 //  -----  Evita múltiples bindings usando namespaces  -----
                 $(document)
-                    
+
                     .off('mouseenter.navbar mouseleave.navbar click.navbar')
 
                     .on('mouseenter.navbar', '.layout__navbar', function () {
@@ -454,7 +459,7 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
                     });
             };
 
-         
+
 
             //  -----------------------------------------------------------
             //  ----------  Manejador de clics para los enlaces  ----------
@@ -521,6 +526,18 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
              */
 
             window.addEventListener('popstate', function (event) {
+                const normalizedPath = (event.state?.path || window.location.pathname)
+                    .replace(settings.base, '')
+                    .replace(/\/$/, '');
+
+                const matchedRoute = settings.routes.find(route =>
+                    route.path.replace(/\/$/, '') === normalizedPath
+                );
+
+                if (matchedRoute) loadContent(matchedRoute);
+            });
+
+            //window.addEventListener('popstate', function (event) {
 
                 //  -----  Usar `event.state.path` si está disponible, si no, tomar la URL actual  -----
 
@@ -529,13 +546,13 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
                  * @constant {Route|undefined} matchedRoute - Objeto de ruta encontrado en `settings.routes`. 
                  */
 
-                const matchedPath = event.state?.path ? event.state.path.replace(settings.base, '') : window.location.pathname.replace(settings.base, '');
-                const matchedRoute = settings.routes.find(route => route.path === matchedPath);
+                //const matchedPath = event.state?.path ? event.state.path.replace(settings.base, '') : window.location.pathname.replace(settings.base, '');
+                //const matchedRoute = settings.routes.find(route => route.path === matchedPath);
 
-                if (matchedRoute)
-                    loadContent(matchedRoute);
+                //if (matchedRoute)
+                    //loadContent(matchedRoute);
 
-            });
+            //});
 
 
             //  ------------------------------------------------
@@ -547,9 +564,10 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             console.warn('----------  pluging - jquery.spa-with-method-load-from-jquery.js - cargado correctamente  ----------');
             console.warn('----------------------------------------------------------------------------------------------------');
             console.log('\n');
-           
+
             //  ----------  INICIO Aplicación  ----------
             init();
+
 
         };
 
