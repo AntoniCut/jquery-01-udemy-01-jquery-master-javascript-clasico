@@ -73,7 +73,7 @@ export const spaUdemyJQueryMasterJavaScriptClasico = ($) => {
      */
     const $layout = $('#layout');
 
-
+    
     //  ----------  Opciones que le pasamos al plugins  ----------
 
     /**

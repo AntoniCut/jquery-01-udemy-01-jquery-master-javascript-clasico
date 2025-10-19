@@ -8,26 +8,6 @@
 */
 
 
-
-/*
-    -----------------------------------------------
-    ----------  1. Mousemove y Mouseout  ----------
-    -----------------------------------------------
-*/
-
-.main__mousemove-mouseout {
-    max-width: 102.4rem;
-    width: 100%;
-    height: 40rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    text-align: center;
-}
-
 #caja1,
 #caja2,
 #caja3 {
@@ -37,82 +17,13 @@
     width: 25rem;
     height: 25rem;
     border: 2px solid black;
-    color: black;
+    color: var(--color-primary);
     font-size: 2.4rem;
     font-weight: bold;
     background-color: yellow;
+    text-align: center;
     cursor: pointer;
-}
-
-
-/*
-    --------------------------------
-    ----------  2. Hover  ----------
-    --------------------------------
-*/
-
-.main__hover {
-    max-width: 102.4rem;
-    width: 100%;
-    height: 40rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    text-align: center;
-}
-
-
-/*
-    ----------------------------------------------
-    ----------  3. Click y Doble Click  ----------
-    ----------------------------------------------
-*/
-
-.main__click-y-dobleclick {
-    max-width: 102.4rem;
-    width: 100%;
-    height: 40rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    text-align: center;
-}
-
-
-/*
-    ---------------------------------------
-    ----------  4. Blur y Focus  ----------
-    ---------------------------------------
-*/
-
-.main__blur-y-focus {
-    max-width: 102.4rem;
-    width: 100%;
-    height: 40rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    text-align: center;
-}
-
-.blur-y-focus__container {
-    height: 20rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    text-align: left;
-    padding: 2rem;
-    background-color: rgb(180, 201, 240);
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.1);
 }
 
 input {
@@ -120,38 +31,7 @@ input {
     width: 30rem;
     font-size: 2rem;
     border: 10px solid #ccc;
-}
-
-#datos {
-    border: 4px dashed black;
-    padding: 1rem;
-    width: 30rem;
-    height: 5rem;
-    line-height: 2.5rem;
-    margin-top: 1rem;
-    display: none;
-    font-size: 2rem;
-}
-
-
-
-/*
-    ----------------------------------------------
-    ----------  5. Mousedown y Mouseup  ----------
-    ----------------------------------------------
-*/
-
-.main__mousedown-y-mouseup {
-    max-width: 102.4rem;
-    width: 100%;
-    height: 40rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    text-align: center;
+    cursor: pointer;
 }
 
 .blur-y-focus__container,
@@ -166,13 +46,6 @@ input {
     background-color: rgb(180, 201, 240);
 }
 
-input {
-    padding: 2rem;
-    width: 30rem;
-    font-size: 2rem;
-    border: 10px solid #ccc;
-}
-
 #datos1,
 #datos2 {
     border: 4px dashed black;
@@ -185,33 +58,11 @@ input {
     font-size: 2rem;
 }
 
-
-
-/*
-    ------------------------------------
-    ----------  6. Mousemove  ----------
-    ------------------------------------
-*/
-
-.main__mousemove {
-    max-width: 102.4rem;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    text-align: center;
-}
-
 #sigueme {
     width: 30px;
     height: 30px;
     display: block;
     border-radius: 100%;
-    position: absolute;
     background-color: yellow;
     border: 3px solid green;
     opacity: 0.3;
