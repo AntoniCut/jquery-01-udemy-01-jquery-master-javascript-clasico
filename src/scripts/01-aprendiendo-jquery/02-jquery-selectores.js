@@ -8,6 +8,7 @@
 */
 
 
+
 (($) => {
 
 
@@ -23,8 +24,14 @@
     */
 
     //  -----  referencias al HTML  -----
+    
+    /** @type {JQuery<HTMLParagraphElement>}  */
     const $rojo1 = $('#rojo1');
+
+    /** @type {JQuery<HTMLParagraphElement>}  */
     const $amarillo1 = $('#amarillo1');
+
+    /** @type {JQuery<HTMLParagraphElement>}  */
     const $verde1 = $('#verde1');
 
     $rojo1
@@ -152,6 +159,10 @@
     $span.on('click', function () {
 
         const $this = $(this);
+
+        /**
+         * @type {string}
+         */
         const baseText = $this.data('originalText');
 
         //  -----  Alternar clases  -----

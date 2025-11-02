@@ -8,8 +8,12 @@
 */
 
 
+/**
+ *  - `Array de objetos de tipo Route` que definen las `rutas de la aplicación SPA` para la página Home.
+ *  @import { Route } from '../types/route-types.js'
+ *  @type {Route[]}
+ */
 
-//  -----  Array de objetos con los IDs y las rutas correspondientes  -----
 export const routes00Home = [
 
     {

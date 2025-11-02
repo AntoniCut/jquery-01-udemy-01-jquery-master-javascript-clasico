@@ -5,51 +5,20 @@
 */
 
 
-//  ------------------------------------------------------------------------
-//  ----------  Envuelve el plugin en una función de modulos ES6  ----------
-//  ------------------------------------------------------------------------
-
-
 /**
- * @function spaWithMethodLoadFromJQueryPlugins
- * @description Este plugin permite cargar contenido dinámico en una aplicación SPA utilizando jQuery.
- * @param {jQuery} $ - Instancia principal de jQuery.
+ *  - Este plugin permite cargar contenido dinámico en una aplicación SPA utilizando jQuery.
+ *  - Envuelve el plugin en una función de módulos ES6 para facilitar su integración.
+ *  @function `spaWithMethodLoadFromJQueryPlugins`
  */
 
-export const spaWithMethodLoadFromJQueryPlugins = ($) => {
+export const spaWithMethodLoadFromJQueryPlugins = () => {
 
 
     //  -------------------------------------------------------------------------------------------
     //  ----------  Encapsulación del plugin por si lo implementamos fuera de un modulo  ----------
     //  -------------------------------------------------------------------------------------------
+
     (function ($) {
-
-
-        /**
-        * @typedef {Object} RouteConfig
-        * @property {string} [id] - ID de la ruta.
-        * @property {string} path - Ruta relativa.
-        * @property {string} [headerTitle] - Título del encabezado.
-        * @property {string} [pageTitle] - Título de la página.
-        * @property {string} [favicon] - Ruta del favicon.
-        * @property {string} [styles] - Hoja de estilos a cargar.
-        * @property {string[]} [scripts] - Lista de scripts a cargar.
-        * @property {string} [urlLayoutHeader] - URL del layout del header.
-        * @property {string} [urlLayoutNavbar] - URL del layout del navbar.
-        * @property {string} [urlLayoutMain] - URL del layout principal.
-        * @property {string} [urlLayoutFooter] - URL del layout del footer.
-        */
-
-        /**
-         * @typedef {Object} SpaPluginSettings
-         * @property {RouteConfig[]} routes - Lista de rutas.
-         * @property {string} base - Base URL de la aplicación.
-         * @property {string} layoutHeader - Selector del header.
-         * @property {string} layoutNavbar - Selector del navbar.
-         * @property {string} layoutMain - Selector del contenido principal.
-         * @property {string} layoutFooter - Selector del footer.
-         * @property {boolean} draggable - Si los elementos son arrastrables.
-         */
 
 
         /*
@@ -59,10 +28,9 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
         */
 
         /**
-         * Plugin principal que gestiona rutas, carga de layouts y navegación SPA.
-         * @type {jQuery}
-         * @param {Partial<SpaPluginSettings>} options - Configuración personalizada.
-         * @returns {jQuery} Retorna el objeto jQuery para encadenar métodos.
+         * - Plugin SPA que añade funcionalidad al prototipo de jQuery.
+         * @param {ConfigOptionsSPA} options - Opciones de configuración de la SPA.
+         * @returns {JQuery} - Retorna el objeto jQuery para encadenamiento.
          */
 
         $.fn.spaWithMethodLoadFromJQuery = function (options) {
@@ -72,7 +40,9 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             //  ----------  Configuración por defecto del plugin  ----------
             //  ------------------------------------------------------------
 
-            /** @type {SpaPluginSettings} */
+            /**
+             * @import { ConfigOptionsSPA } from '../../types/config-option-spa-types.js';
+             * @type {ConfigOptionsSPA} */
 
             const settings = $.extend({
 
@@ -92,16 +62,28 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             //  ----------  referencias al HTML  ----------
             //  -------------------------------------------
 
-            /** * @type {jQuery<HTMLHeaderElement>} Selector para el header del layout */
+            /** 
+             *  -  Selector para el `Header` del layout.
+             *  @type {JQuery<HTMLHeaderElement>}
+             */
             const $layoutHeader = $(settings.layoutHeader);
 
-            /** * @type {jQuery<HTMLNavElement>} Selector para el navbar del layout */
+            /** 
+             *  -  Selector para el `Navbar` del layout.
+             *  @type {JQuery<HTMLNavElement>}
+             */
             const $layoutNavbar = $(settings.layoutNavbar);
 
-            /** * @type {jQuery<HTMLMainElement>} Selector para el contenido principal del layout */
+            /** 
+             *  -  Selector para el `Main` o contenido principal del layout.
+             *  @type {JQuery<HTMLMainElement>}
+             */
             const $layoutMain = $(settings.layoutMain);
 
-            /** * @type {jQuery<HTMLFooterElement>} Selector para el footer del layout */
+            /** 
+             * -  Selector para el `Footer` del layout.
+             * @type {JQuery<HTMLFooterElement>} 
+             */
             const $layoutFooter = $(settings.layoutFooter);
 
 
@@ -110,12 +92,13 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             //  ------------------------------------------------------------------------------------
 
             /**
-             * @function init
-             * @description Inicializa la aplicación y carga el contenido de la ruta inicial.
-             * @returns {void}
+             * 
+             * - Inicializa la aplicación y carga el contenido de la ruta inicial.
+             * @function `init`
              */
 
             const init = () => {
+
                 // Elimina barra final del pathname
                 const normalizedPath = window.location.pathname.replace(/\/$/, '').replace(settings.base, '');
                 const initialRoute = settings.routes.find(route =>
@@ -127,19 +110,6 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
                 history.replaceState({ path: window.location.pathname }, '', window.location.pathname);
             };
 
-            // const init = () => {
-
-            //     const initialPath = window.location.pathname.replace(settings.base, '');
-            //     const initialRoute = settings.routes.find(route => route.path === initialPath);
-
-            //     if (initialRoute)
-            //         loadContent(initialRoute);
-
-
-            //     //  ----------  Guarda el estado inicial para que el botón "Atrás y adelante" funcione correctamente  ----------
-            //     history.replaceState({ path: window.location.pathname }, '', window.location.pathname);
-
-            // }
 
 
             //  --------------------------------------------------------------------
@@ -167,12 +137,12 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             //  ------------------------------------------------------------------
 
             /**
-             * @function loadContent
-             * @description Maneja la carga de contenido para una ruta específica utilizando la API ViewTransition si está disponible,
-             *              o un método clásico si no lo está. 
-             *              Determina el método de transición y delega la carga del contenido.
-             * @param {RouteConfig} route - Objeto de configuración de la ruta a cargar.
-             * @returns {void}
+             *  - Maneja la carga de contenido para una ruta específica utilizando la API ViewTransition si está disponible,
+             *    o un método clásico si no lo está. 
+             *  - Determina el método de transición y delega la carga del contenido. 
+             *  @function `loadContent`
+             *  @import { Route } from '../../types/route-types.js';
+             *  @param {Route} route - Objeto de configuración de la ruta a cargar.
              */
 
             const loadContent = route => {
@@ -181,7 +151,7 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
                 if (!document.startViewTransition)
                     return loadContentWithoutViewTransition(route);
 
-                loadContentWithViewTransition(route);
+                return loadContentWithViewTransition(route);
 
             }
 
@@ -191,25 +161,24 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             //  -------------------------------------------------------------------------------------
 
             /**
-             * @function loadContentWithViewTransition
-             * @description Maneja la carga de contenido utilizando la API ViewTransition.
-             * @param {RouteConfig} route - Objeto de configuración de la ruta a cargar.
-             * @returns {void}
+             * - `Función que maneja la carga de contenido utilizando la API ViewTransition`.
+             *  @param {Route} route - Objeto de configuración de la ruta a cargar.
+             *  @return {Promise<void>} - `Promesa` que se resuelve cuando todo el contenido se ha cargado correctamente.
              */
 
+            const loadContentWithViewTransition = async (route) => {
 
-            const loadContentWithViewTransition = route => {
+                document.startViewTransition(async () => {
 
-                //  -----  Usamos la API ViewTransition para una transición suave  -----
-                document.startViewTransition(() => {
+                    try {
+                        await loadTodoContentInHtml(route);
 
-                    return new Promise(resolve => {
+                    } catch (err) {
+                        console.error("❌ Error durante la carga de contenido:", err);
+                    }
 
-                        loadTodoContentInHtml(route);
-                        resolve();                  //  -----  finaliza la transición  -----
-                    });
                 });
-            }
+            };
 
 
 
@@ -218,10 +187,9 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             //  -------------------------------------------------------------------------------------
 
             /**
-             * @function loadContentWithoutViewTransition
-             * @description Maneja la carga de contenido sin utilizar la API ViewTransition.
-             * @param {RouteConfig} route - Objeto de configuración de la ruta a cargar.
-             * @returns {void}
+             * @function `loadContentWithoutViewTransition`
+             * - Maneja la carga de contenido sin utilizar la API ViewTransition.
+             * @param {Route} route - Objeto de configuración de la ruta a cargar.
              */
 
             const loadContentWithoutViewTransition = route => loadTodoContentInHtml(route);
@@ -233,88 +201,110 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             //  ----------------------------------------------------------------------
 
             /**
-             * @function loadTodoContentInHtml
-             * @description Carga todo el contenido de la ruta especificada en el HTML.
-             * @param {RouteConfig} route - Objeto de configuración de la ruta a cargar.
+             *  `Función que carga dinámicamente los layouts principales y los recursos de una ruta`.
+             *  @param {Route} route - Objeto de configuración de la ruta a cargar.
+             *  @returns {Promise<void>} - `Promesa` que se resuelve cuando todo el contenido se ha cargado correctamente.
              */
 
-            const loadTodoContentInHtml = route => {
+            const loadTodoContentInHtml = (route) => {
 
 
-                //  -----  carga el contenido de Layout Header  -----
-                $layoutHeader.load(route.urlLayoutHeader, function (response, status, xhr) {
+                return new Promise((resolve, reject) => {
 
-                    if (status === "error") {
-                        console.error(`Error al cargar ${route.urlLayoutHeader}: ${xhr.statusText}`);
-                        $layoutHeader.html('<p>Error 404: No se pudo cargar el contenido.</p>');
-                        return resolve();
-                    }
-
-                    //  -----  Cargamos el navbar para que siempre este disponible  -----
-                    $layoutNavbar.load(route.urlLayoutNavbar, (response, status, xhr) => {
+                    //  -----  Carga el Layout Header  -----
+                    $layoutHeader.load(route.urlLayoutHeader, function (response, status, xhr) {
 
                         if (status === "error") {
-                            console.error(`Error al cargar ${route.urlLayoutNavbar}: ${xhr.statusText}`);
-                            $layoutNavbar.html('<p>Error 404: No se pudo cargar el contenido.</p>');
-                            return resolve();
+                            console.error(`Error al cargar ${route.urlLayoutHeader}: ${xhr.statusText}`);
+                            $layoutHeader.html('<p>Error 404: No se pudo cargar el contenido del header.</p>');
+                            return reject(new Error(`Error al cargar Header: ${xhr.statusText}`));
                         }
 
-                        actionsNavbar();
+                        //  -----  Carga el Título del Header  -----
+                        $('#headerTitle').html(route.headerTitle);
 
-                        if (settings.draggable)
-                            draggableComponentsHtml();
+                        //  -----  Cargamos el Navbar dentro del Header  -----
+                        $layoutNavbar.load(route.urlLayoutNavbar, (response, status, xhr) => {
+
+                            if (status === "error") {
+                                console.error(`Error al cargar ${route.urlLayoutNavbar}: ${xhr.statusText}`);
+                                $layoutNavbar.html('<p>Error 404: No se pudo cargar el contenido del navbar.</p>');
+                                return reject(new Error(`Error al cargar Navbar: ${xhr.statusText}`));
+                            }
+
+                            //  -----  Acciones del Navbar -----
+                            actionsNavbar();
+
+                            if (settings.draggable) {
+                                draggableComponentsHtml();
+                            }
+
+                        });
 
                     });
 
-                    //  -----  Carga el Título del Header  -----
-                    $('#headerTitle').html(route.headerTitle);
 
-                });
+                    //  -----  Carga el contenido principal (Main)  -----
+                    $layoutMain.load(route.urlLayoutMain, function (response, status, xhr) {
 
+                        if (status === "error") {
+                            console.error(`Error al cargar ${route.urlLayoutMain}: ${xhr.statusText}`);
+                            $layoutMain.html('<p>Error 404: No se pudo cargar el contenido principal.</p>');
+                            return reject(new Error(`Error al cargar Main: ${xhr.statusText}`));
+                        }
 
-                //  -----  Cargamos el Favicon  -----
-                updateFavicon(route.favicon);
-
-
-                //  -----  Cargamos el Título de la Pagina  -----
-                document.title = route.pageTitle;
-
-
-                //  -----  Actualizamos la URL de la Página  -----
-                const newUrl = `${settings.base}${route.path}`;
-                if (window.location.pathname !== newUrl) {
-                    history.pushState({ path: newUrl }, '', newUrl);
-                }
+                    });
 
 
-                //  -----  Cargamos los Estilos de la Página  -----
-                if (route.styles)
-                    loadStylesheet(route.styles);
+                    //  -----  Carga el Footer  -----
+                    $layoutFooter.load(route.urlLayoutFooter, function (response, status, xhr) {
+
+                        if (status === "error") {
+                            console.error(`Error al cargar ${route.urlLayoutFooter}: ${xhr.statusText}`);
+                            $layoutFooter.html('<p>Error 404: No se pudo cargar el contenido del footer.</p>');
+                            return reject(new Error(`Error al cargar Footer: ${xhr.statusText}`));
+                        }
+
+                        //  -----  Título del Footer  -----
+                        $('#footerTitle').html(route.headerTitle);
+
+                        // ✅ Todo cargado correctamente
+                        resolve();
+
+                    });
 
 
-                //  -----  Cargamos los Script de la Página Si Hay  -----
-                if (route.scripts)
-                    route.scripts.forEach(script => loadScriptsIfExists(script));
+                    //  -----  Carga el Favicon  -----
+                    updateFavicon(route.favicon);
 
 
-                //  -----  carga el contenido de Layout Main  -----
-                $layoutMain.load(route.urlLayoutMain, function (response, status, xhr) {
+                    //  -----  Carga el Título de la Página  -----
+                    document.title = route.pageTitle;
 
-                    if (status === "error") {
-                        console.error(`Error al cargar ${route.urlLayoutMain}: ${xhr.statusText}`);
-                        $layoutMain.html('<p>Error 404: No se pudo cargar el contenido.</p>');
-                        return resolve();
+
+                    //  -----  Actualizamos la URL de la Página  -----
+                    const newUrl = `${settings.base}${route.path}`;
+                    
+                    if (window.location.pathname !== newUrl) {
+                        history.pushState({ path: newUrl }, '', newUrl);
+                    }
+
+
+                    // ----- Carga los Estilos (si existen) -----
+                    if (route.styles) {
+                        loadStylesheet(route.styles);
+                    }
+
+
+                    // ----- Carga los Scripts (si existen) -----
+                    if (route.scripts) {
+                        route.scripts.forEach(script => loadScriptsIfExists(script));
                     }
 
                 });
 
 
-                //  -----  cargamos el footer  -----
-                $layoutFooter.load(route.urlLayoutFooter, function (response, status, xhr) {
-                    $('#footerTitle').html(route.headerTitle);
-                });
-
-            }
+            };
 
 
 
@@ -465,25 +455,21 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             //  ----------  Manejador de clics para los enlaces  ----------
             //  -----------------------------------------------------------
 
-            /**
-             * @event click
-             * @description
-             *  Manejador global para los clics en enlaces del menú principal que tienen el atributo `data-id`. 
-             *  - Previene la navegación por defecto.
-             *  - Obtiene el `data-id` del enlace clicado.
-             *  - Busca en las rutas configuradas (`settings.routes`) la que coincide con ese ID.
-             *  - Cierra el menú con un efecto `slideUp`.
-             *  - Si existe la ruta encontrada, carga su contenido dinámicamente.
-             * @param {JQuery.ClickEvent} event - Evento de clic generado por el navegador.
-             * @returns {void}
-             */
-
             $(document).on('click', 'a[data-id]', function (event) {
 
                 event.preventDefault();
 
                 //  -----  Obtener el ID del enlace clicado  -----
+
+                /**
+                 * @type {string} dataId - El valor del atributo `data-id` del enlace clicado.
+                 */
                 const dataId = $(this).data('id');
+
+                /**
+                 * - La ruta correspondiente al `data-id` clicado.
+                 * @type {Route|undefined} 
+                 */
                 const route = settings.routes.find(route => route.id === dataId);
 
                 //  -----  Ocultamos la lista del menú efecto slideUp antes de cambiar el contenido  -----
@@ -503,29 +489,11 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
             //  ----------  Manejar retrocesos en el historial  ----------
             //  ----------------------------------------------------------
 
-            /**
-             * @event popstate
-             * @description
-             *  Manejador para el evento `popstate`, que se dispara cuando el usuario
-             *  navega en el historial del navegador (botón "atrás" o "adelante").
-             *  - Determina la ruta solicitada desde `event.state.path` o, si no existe,
-             *    a partir de la URL actual.
-             *  - Busca una coincidencia en `settings.routes`.
-             *  - Si encuentra la ruta:
-             *    - Llama a `loadContent(matchedRoute)` para renderizar la vista.
-             *    - Si la ruta es la raíz (`'/'`), recarga también el menú de navegación (`$layoutNavbar`).
-             *  - Si no encuentra coincidencia:
-             *    - Ejecuta `loadInitialContent()` para mostrar el contenido por defecto.
-             * 
-             * @param {PopStateEvent} event - Evento del historial del navegador.
-             * 
-             * @example
-             * // Caso: el usuario pulsa atrás en el navegador
-             * window.dispatchEvent(new PopStateEvent("popstate", { state: { path: "/about" } }));
-             * // -> Buscará la ruta "/about" en settings.routes y cargará su contenido.
-             */
-
             window.addEventListener('popstate', function (event) {
+
+                /**
+                 * @type {string} normalizedPath - Ruta actual sin el prefijo `settings.base`.
+                 */
                 const normalizedPath = (event.state?.path || window.location.pathname)
                     .replace(settings.base, '')
                     .replace(/\/$/, '');
@@ -534,25 +502,11 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
                     route.path.replace(/\/$/, '') === normalizedPath
                 );
 
-                if (matchedRoute) loadContent(matchedRoute);
+                if (matchedRoute)
+                    loadContent(matchedRoute);
+
             });
 
-            //window.addEventListener('popstate', function (event) {
-
-                //  -----  Usar `event.state.path` si está disponible, si no, tomar la URL actual  -----
-
-                /**
-                 * @constant {string} matchedPath - Ruta actual sin el prefijo `settings.base`.
-                 * @constant {Route|undefined} matchedRoute - Objeto de ruta encontrado en `settings.routes`. 
-                 */
-
-                //const matchedPath = event.state?.path ? event.state.path.replace(settings.base, '') : window.location.pathname.replace(settings.base, '');
-                //const matchedRoute = settings.routes.find(route => route.path === matchedPath);
-
-                //if (matchedRoute)
-                    //loadContent(matchedRoute);
-
-            //});
 
 
             //  ------------------------------------------------
@@ -567,6 +521,9 @@ export const spaWithMethodLoadFromJQueryPlugins = ($) => {
 
             //  ----------  INICIO Aplicación  ----------
             init();
+
+
+            return this;
 
 
         };

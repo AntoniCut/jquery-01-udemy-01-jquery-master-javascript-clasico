@@ -8,6 +8,9 @@
 */
 
 
+//@ts-check
+
+
 (($) => {
 
     console.log('\n');
@@ -167,9 +170,19 @@
             const $this = $(this);
             $this.css("border", "10px solid #ccc");
 
+            const value = $this.val();
+            
+            // Convertimos a texto seguro para mostrarlo
+            const textValue = Array.isArray(value)
+                ? value.join(', ')       // si es array → lo unimos
+                : value !== undefined
+                    ? String(value)      // si es string o number → lo convertimos
+                    : '';                // si es undefined → cadena vacía
+
             $datos1
-                .text($this.val())
+                .text(textValue)
                 .show();
+                
         });
 
 
@@ -187,7 +200,7 @@
     $nombre2.on('mousedown', function () {
 
         const $this = $(this);
-    
+
         $this
             .val('Pulsado tecla ratón')
             .css("border-color", "green");
@@ -228,13 +241,13 @@
 
             //  ----- Subir scroll suavemente hacia arriba y ocultar cursor -----
             $layout
-                
+
                 .stop()
-                
+
                 .animate({
                     scrollTop: 0
                 }, 1000)
-                
+
                 .css('cursor', 'none');
 
             $sigueme.css({
