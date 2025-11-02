@@ -19,7 +19,9 @@ import { deleteAsync } from "del";
 const EXCLUDES = [
     "!node_modules/**",
     "!dist/**",
+    "!src/types/**",
     "!gulpfile.js",
+    "!jsconfig.json",
 ];
 
 

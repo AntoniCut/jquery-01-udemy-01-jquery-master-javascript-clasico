@@ -1,0 +1,57 @@
+/*
+    ----------------------------------------------------------------------
+    ----------  /jquery.antonydev.tech/  ---------------------------------
+    ----------  /01-udemy/01-jquery-master-javascript-clasico/  ----------
+    ----------  /src/styles/01-aprendiendo-jquery/  ----------------------
+    ----------  /06-jquery-animaciones-personalizadas.css  ---------------
+    ----------------------------------------------------------------------  
+*/
+
+
+/*
+    ----------------------------------------------------------------------------
+    ----------  3. Animaciones Personalizadas y Callback de Funciones ----------
+    ----------------------------------------------------------------------------
+*/
+
+.main__animaciones-personalizadas {
+    max-width: 102.4rem;
+    width: 100%;
+    min-height: 46rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.btn__container3 {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/*
+    ------------------------------------------------
+    ----------  4. Callback en Funciones  ----------
+    ------------------------------------------------
+*/
+
+.main__callback-en-funciones {
+    max-width: 102.4rem;
+    width: 100%;
+    min-height: 46rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}

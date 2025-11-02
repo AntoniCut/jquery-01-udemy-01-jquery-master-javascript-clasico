@@ -14,7 +14,7 @@ import { loadJQueryByCdnOLocal } from "./libs/jquery/load/load-jquery-by-cdn-loc
 
 
 import { cdnJQueryUI_1_14_1 } from "./libs/jquery-ui/cdn/cdn-jquery-ui-1.14.1.js";
-import { loadJQueryUIByCdnOLocal } from "../../01-jquery-master-javascript-clasico/src/libs/jquery-ui/load/load-jquery-ui-by-cdn-local.js";
+import { loadJQueryUIByCdnOLocal } from "./libs/jquery-ui/load/load-jquery-ui-by-cdn-local.js";
 
 import { spaWithMethodLoadFromJQueryPlugins } from "./plugins/spa-with-method-load-from-jquery/jquery.spa-with-method-load-from-jquery.js";
 import { spaUdemyJQueryMasterJavaScriptClasico } from "./scripts/spa/spa-udemy-jquery-master-javascript-clasico.js";
@@ -82,17 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
 */
 
 /**
- *  - Configuración del CDN de jQuery.
+ *  - Configuración del `CDN de jQuery`.
  *  @import  {CDNJQuery} from './types/cdn-types.js';
  *  @type {CDNJQuery}
  */
 const cdnJQuery = cdnJQuery_4_0_0;
 
 /**
- *  - Ruta del archivo jQuery local a usar como fallback si el CDN falla.
+ *  - Ruta del `Archivo jQuery local` a usar como fallback si el CDN falla.
  *  @type {string}
  */
-const localJQuery = "/src/libs/jquery/local/jquery-4.0.0-beta.min.js";
+const localJQuery = "./libs/jquery/local/jquery-4.0.0-beta.min.js";
 
 
 
@@ -103,17 +103,17 @@ const localJQuery = "/src/libs/jquery/local/jquery-4.0.0-beta.min.js";
 */
 
 /**
- *  - Configuración del CDN de jQuery UI.
+ *  - Configuración del `CDN de jQuery UI`.
  *  @import  {CDNJQueryUI} from './types/cdn-types.js';
  *  @type {CDNJQueryUI}
  */
 const cdnJQueryUI = cdnJQueryUI_1_14_1;
 
 /**
- *  - Ruta del archivo jQuery UI local a usar como fallback si el CDN falla.
+ *  - Ruta del `Archivo jQuery UI local` a usar como fallback si el CDN falla.
  *  @type {string}
  */
-const localJQueryUI = "/src/libs/jquery-ui/local/jquery-ui-1.14.1.min.js";
+const localJQueryUI = "./libs/jquery-ui/local/jquery-ui-1.14.1.min.js";
 
 
 
@@ -134,7 +134,7 @@ loadJQueryByCdnOLocal(cdnJQuery, localJQuery)
     .then(
 
         /**  
-         * - Instancia de jQuery
+         *  - Instancia de jQuery
          *  @param {JQueryStatic} $   
          */
 
@@ -179,7 +179,7 @@ loadJQueryByCdnOLocal(cdnJQuery, localJQuery)
     .catch(
 
         /**
-         * - Manejo de errores en la carga de jQuery o jQuery UI 
+         * - Manejo de `Errores` en la carga de jQuery o jQuery UI .
          *  @param {Error} err 
          */
         err => console.error("Error al cargar jQuery o jQuery UI:", err));

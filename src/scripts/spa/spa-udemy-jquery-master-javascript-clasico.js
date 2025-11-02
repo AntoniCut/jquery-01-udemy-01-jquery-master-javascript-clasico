@@ -18,13 +18,13 @@ import { routes02AprendiendoJQueryUI } from "../../routes/routes-02-aprendiendo-
  *   @function `spaJQueryUdemyMasterJavaScriptClasico`
  *   
  * - Inicializa la lógica **SPA** (Single Page Application) para
- *   la sección *jQuery Desarrollos* del proyecto.
+ *   El Proyecto 01-jquery-master-javascript-clasico del curso de Udemy.
  *
  * - Esta función configura las rutas, opciones y elementos del
  *   layout, y luego invoca el plugin `spaWithMethodLoadFromJQuery`
  *   para manejar la navegación dinámica dentro de la aplicación.
  *
- *  - Importa las rutas definidas en:`routes00Home`, `routes01AprendiendoJQuery`.
+ *  - Importa las rutas definidas en:`routesJQueryAntonydevTech`.
  *  - Combina las rutas en un array `allRoutes`.
  *  - Obtiene una referencia al contenedor principal `#layout`.
  *  - Configura las opciones necesarias para el plugin SPA,

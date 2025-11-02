@@ -1,0 +1,84 @@
+/*
+    ----------------------------------------------------------------------
+    ----------  /jquery.antonydev.tech/  ---------------------------------
+    ----------  /01-udemy/01-jquery-master-javascript-clasico/  ----------
+    ----------  /src/styles/01-aprendiendo-jquery/  ----------------------
+    ----------  /05-jquery-efectos.css  ----------------------------------
+    ----------------------------------------------------------------------  
+*/
+
+
+/*
+    ----------------------------------
+    ----------  2. Efectos  ----------
+    ----------------------------------
+*/
+
+.main__efectos {
+    max-width: 102.4rem;
+    width: 100%;
+    min-height: 46rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.efectos__container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+}
+
+.efectos-btn__container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.efectos__animation {
+    width: 50%;
+    min-height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__container2 {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+button {
+    width: 20rem;
+}
+
+#caja1, 
+#caja2 {
+    margin-top: 2rem;
+    padding: 2rem 4rem;
+    border: 5px dashed black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ccc;
+    color: black;
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#caja2 {
+    margin-left: -42rem;
+}
