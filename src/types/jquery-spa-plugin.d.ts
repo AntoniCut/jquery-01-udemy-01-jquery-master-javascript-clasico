@@ -18,7 +18,7 @@ declare global {
         
         /**
          * - `Plugin SPA` personalizado que usa el método `load()`.
-         * @param options - Objeto de configuración para la SPA.
+         * @param options - Objeto de `configuración` para la SPA.
          * @returns {JQuery}
          */
         

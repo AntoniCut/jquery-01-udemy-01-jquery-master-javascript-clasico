@@ -58,7 +58,7 @@
     */
 
     /**
-     *  - `input` de la sección `append`
+     *  - `input` de la sección `Append`
      *  @type {JQuery<HTMLInputElement>}
      */
     const $inputAppend = $('#inputAppend');
@@ -91,7 +91,7 @@
             $menuAppend.append(`
 
                 <li>
-                    <a class="enlace" href="${link}">${link} </a>
+                    <a class="enlace-added" href="${link}">${link} </a>
                 </li>
             `);
 
@@ -114,7 +114,7 @@
     */
 
     /**
-     * - `input` de la sección `prepend`
+     * - `input` de la sección `Prepend`
      * @type {JQuery<HTMLInputElement>}
      */
     const $inputPrepend = $('#inputPrepend');
@@ -146,7 +146,7 @@
 
             $menuPrepend.prepend(`
                 <li>
-                    <a class="enlace" href="${link}">${link}</a>
+                    <a class="enlace-added" href="${link}">${link}</a>
                 </li>
             `);
 
@@ -162,7 +162,6 @@
 
 
 
-
     /*
         ----------------------
         -----  3. After  -----
@@ -170,13 +169,13 @@
     */
 
     /**
-     *  - `input` de la sección `append`
+     *  - `input` de la sección `After`
      *  @type {JQuery<HTMLInputElement>}
      */
     const $inputAfter = $('#inputAfter');
 
     /**
-     * - `Botón` para añadir enlaces en la sección de `After`.
+     * - `Botón` para añadir enlaces en la sección `After`.
      *  @type {JQuery<HTMLButtonElement>}
      */
     const $btnAfter = $('#btnAfter');
@@ -203,7 +202,7 @@
             $menuAfter.after(`
 
                 <li>
-                    <a class="enlace" href="${link}">${link} </a>
+                    <a class="enlace-added" href="${link}">${link} </a>
                 </li>
             `);
 
@@ -226,13 +225,13 @@
    */
 
     /**
-     *  - `input` de la sección `append`
+     *  - `input` de la sección `Before`
      *  @type {JQuery<HTMLInputElement>}
      */
     const $inputBefore = $('#inputBefore');
 
     /**
-     * - `Botón` para añadir enlaces en la sección de `After`.
+     * - `Botón` para añadir enlaces en la sección de `Before`.
      *  @type {JQuery<HTMLButtonElement>}
      */
     const $btnBefore = $('#btnBefore');
@@ -258,7 +257,7 @@
             $menuBefore.before(`
 
                 <li>
-                    <a class="enlace" href="${link}">${link} </a>
+                    <a class="enlace-added" href="${link}">${link} </a>
                 </li>
             `);
 
@@ -281,9 +280,6 @@
     $btnBefore.removeAttr('disabled');
 
     reloadLinks();
-
-
-
 
 
 })(jQuery);

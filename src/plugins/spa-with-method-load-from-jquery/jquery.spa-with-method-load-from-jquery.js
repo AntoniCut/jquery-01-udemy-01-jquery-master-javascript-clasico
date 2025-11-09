@@ -343,13 +343,22 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
              */
 
             const loadStylesheet = cssFile => {
+                
+                //  -----  Elimina los CSS de páginas anteriores,  -------- 
+                //  -----  excepto layout-header.css (que es global)  -----
 
-                let $stylesheet = $(`link[href*="${cssFile}"]`);
-                if ($stylesheet.length === 0) {
-                    $stylesheet = $('<link rel="stylesheet">').appendTo('head');
-                }
-                $stylesheet.attr('href', `${cssFile}?t=${new Date().getTime()}`);
-            }
+                
+                $('link[data-page-style="true"]').remove();
+
+                //  -----  Crea el nuevo link  -----
+                $('<link>')
+                    .attr({
+                        rel: 'stylesheet',
+                        href: `${cssFile}?t=${new Date().getTime()}`,
+                        'data-page-style': 'true'
+                    })
+                    .appendTo('head');
+           };
 
 
             //  ------------------------------------------------------------------

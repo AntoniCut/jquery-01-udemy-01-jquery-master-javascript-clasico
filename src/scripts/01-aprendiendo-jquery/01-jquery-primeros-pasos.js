@@ -14,7 +14,10 @@
 
     console.log('\n');
     console.warn('-----  01-jquery-primeros-pasos.js  -----');
-    alert('Aprendiendo jQuery del Master de JavaScript Clásico');
+
+    setTimeout(() => {
+        alert('Aprendiendo jQuery del Master de JavaScript Clásico');
+    }, 3000);
 
 
     /**

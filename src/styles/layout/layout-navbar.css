@@ -69,7 +69,7 @@
 @media (min-width: 768px) {
 
     .layout__navbar {
-        max-width: 125rem;
+        max-width: 160rem;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

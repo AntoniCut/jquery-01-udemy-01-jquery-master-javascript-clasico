@@ -34,6 +34,7 @@
     /** @type {JQuery<HTMLParagraphElement>}  */
     const $verde1 = $('#verde1');
 
+
     $rojo1
         .css('color', 'white')
         .css('background', 'red')
@@ -56,9 +57,25 @@
 
 
     //  -----  referencias al HTML  -----
+    
+    /**
+     * @type {JQuery<HTMLParagraphElement>}
+     */
     const $rojo2 = $('.rojo2');
+    
+    /**
+     * @type {JQuery<HTMLParagraphElement>}
+     */
     const $amarillo2 = $('.amarillo2');
+    
+    /**
+     * @type {JQuery<HTMLParagraphElement>}
+     */
     const $verde2 = $('.verde2');
+    
+    /**
+     * @type {JQuery<HTMLParagraphElement>}
+     */
     const $zebra2 = $('.zebra2');
 
     $rojo2
@@ -110,10 +127,20 @@
     */
 
     //  -----  referencias al HTML  -----
+    
+    /** @type {JQuery<HTMLSpanElement>} */
     const $rojo3 = $('.rojo3');
+    
+    /** @type {JQuery<HTMLSpanElement>} */
     const $amarillo3 = $('.amarillo3');
+    
+    /** @type {JQuery<HTMLSpanElement>} */
     const $verde3 = $('.verde3');
+    
+    /** @type {JQuery<HTMLSpanElement>} */
     const $zebra3 = $('.zebra3');
+    
+    /** @type {JQuery<HTMLSpanElement>} */
     const $span = $('span');
 
     $rojo3
@@ -144,6 +171,7 @@
     //  -----  Guardar el texto base sin clases adicionales  -----
     $span.each(function () {
 
+        
         const $this = $(this);
 
         const texto = $this
@@ -248,7 +276,7 @@
     const $btnChangeBackground = $('#btnChangeBackground');
     const $btnGetTitle = $('#btnGetTitle');
 
-    const $parrafosEnlaces = $('p, a');
+    const $parrafosEnlaces = $('.find-y-parent__container p, .find-y-parent__container a');
     const $caja = $('#caja');
 
     $rojo5

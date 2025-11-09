@@ -14,59 +14,88 @@
     ----------------------------------
 */
 
-.main__efectos {
-    max-width: 102.4rem;
+.main__section {
+    max-width: 120rem;
     width: 100%;
-    min-height: 46rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 0.5rem;
     text-align: center;
 }
 
-.efectos__container {
+.section__efectos {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5rem;
-    justify-content: center;
-}
-
-.efectos-btn__container {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.efectos__animation {
-    width: 50%;
-    min-height: 20rem;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 5rem;
+    padding: 2rem;
 }
 
-.btn__container2 {
+@media (min-width: 768px) {
+    
+    .section__efectos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        padding: 3rem;
+        gap: 3rem;
+    }
+}
+
+.efectos__btns-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: var(--bg-light);
+}
+
+.btn__container {
     margin-top: 1rem;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
+}
+
+.btn__container:last-child {
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 460px) {
+    
+    .btn__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+}
+
+.efectos__animation {
+    width: 100%;
+    min-height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--bg-light);
 }
 
 button {
-    width: 20rem;
+    width: 100%;
 }
 
-#caja1, 
-#caja2 {
+#caja  {
     margin-top: 2rem;
     padding: 2rem 4rem;
     border: 5px dashed black;
