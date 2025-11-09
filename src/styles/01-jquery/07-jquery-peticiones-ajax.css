@@ -14,25 +14,35 @@
     ----------------------------
 */
 
-.main__load {
-    max-width: 102.4rem;
+#datosLoad {
+    width: 100%; 
+    min-height: 28rem;
+    max-height: 75rem;
+    display: flex;
+    background-color: aliceblue;
+}
+
+.section__load {
+    max-width: 160rem;
     width: 100%;
-    height: 80rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
-    padding: 3rem;
+    gap: 2rem;
+    padding: 2rem;
     border-radius: 0.5rem;
     text-align: center;
 }
 
-#datosLoad {
-    width: 100%; 
-    display: flex;
+.load__title {
+    width: 100%;
+    padding: 1rem;
+    color: var(--color-primary);
+    background-color: var(--bg-light);
+    font-size: 1.8rem;
 }
 
-#datosLoad img {
+.load__img {
     width: 100%;
     height: auto;
 }
@@ -44,18 +54,10 @@
     ----------------------------
 */
 
-.main__get {
-    max-width: 160rem;
-    width: 100%;
-    height: 55rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    text-align: center;
+.main__section--get {
+    height: 52rem;   
 }
+
 
 .main__post {
     max-width: 160rem;

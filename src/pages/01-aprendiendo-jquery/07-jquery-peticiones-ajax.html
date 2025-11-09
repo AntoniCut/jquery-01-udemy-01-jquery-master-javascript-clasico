@@ -22,11 +22,134 @@
         Aprendiendo jQuery - 7. Peticiones AJAX
     </h2>
 
+    <!--  --------------------------------------  -->
+    <!--  ----------  1. Método LOAD  ----------  -->
+    <!--  --------------------------------------  -->
     <section class="main__section">
 
-        
-        
+        <h3 class="section__title"> 1. Método LOAD </h3>
+
+        <button id="btnLoad"> Load </button>
+
+        <article id="datosLoad">
+            <!--  *****  Aqui se Renderiza la Peticion AJAX con el método LOAD  *****  -->
+        </article>
+
     </section>
-   
+
+
+    <!--  --------------------------------------  -->
+    <!--  ----------  2. Método GET  ----------  -->
+    <!--  --------------------------------------  -->
+    <section class="main__section main__section--get">
+
+        <h3 class="section__title"> 2. Método GET </h3>
+
+        <button id="btnGet"> Get </button>
+
+        <article id="datosGet">
+            <!--  *****  Aqui se Renderiza la Peticion AJAX con el método GET  *****  -->
+        </article>
+
+    </section>
+
+
+    <!--  --------------------------------------  -->
+    <!--  ----------  3. Método POST  ----------  -->
+    <!--  --------------------------------------  -->
+    <section class="main__section main__section--post">
+
+        <h3 class="section__title"> 3. Método POST </h3>
+
+        <form 
+            action="https://jsonplaceholder.typicode.com/users" 
+            method="POST" 
+            id="formularioPost"
+        >
+
+            <div class="form__input">
+                ID: <input type="text" name="id">
+            </div>
+
+            <div class="form__input">
+                Name: <input type="text" name="name">
+            </div>
+
+            <div class="form__input">
+                Username: <input type="text" name="username">
+            </div>
+
+            <div class="form__input">
+                Email: <input type="email" name="email">
+            </div>
+
+            <div class="form__input">
+                Phone: <input type="tel" name="phone">
+            </div>
+
+            <div class="form__input">
+                Website: <input type="url" name="website">
+            </div>
+
+            <input type="submit" name="Registrar">
+
+        </form>
+
+
+        <article id="datosPost">
+            <!--  *****  Aqui se Renderiza la Peticion AJAX con el método POST  *****  -->
+        </article>
+
+    </section>
+
+
+
+    <!--  --------------------------------------  -->
+    <!--  ----------  4. Método AJAX  ----------  -->
+    <!--  --------------------------------------  -->
+    <section class="main__section main__section--post">
+
+        <h3 class="section__title"> 4. Método AJAX </h3>
+        
+        <form 
+            action="https://jsonplaceholder.typicode.com/users" 
+            method="POST" 
+            id="formularioAjax"
+        >
+
+            <div class="form__input">
+                ID: <input type="text" name="id">
+            </div>
+
+            <div class="form__input">
+                Name: <input type="text" name="name">
+            </div>
+
+            <div class="form__input">
+                Username: <input type="text" name="username">
+            </div>
+
+            <div class="form__input">
+                Email: <input type="email" name="email">
+            </div>
+
+            <div class="form__input">
+                Phone: <input type="tel" name="phone">
+            </div>
+
+            <div class="form__input">
+                Website: <input type="url" name="website">
+            </div>
+
+            <input type="submit" name="Registrar">
+
+        </form>
+
+
+        <article id="datosAjax">
+            <!--  *****  Aqui se Renderiza la Peticion AJAX con el método POST  *****  -->
+        </article>
+
+    </section>
 
 </main>
