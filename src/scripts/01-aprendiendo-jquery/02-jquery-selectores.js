@@ -100,10 +100,11 @@
             const color = $(this).css('color');
             console.log('color zebra2 => ', color);
 
+            const $this = $(this);
 
             if (color === 'rgb(255, 255, 255)') {
 
-                $(this)
+                $this
                     .text('Soy un parrafo de color Naranja')
                     .css("color", "orange")
                     .addClass('zebra-class')
@@ -111,7 +112,7 @@
 
             if (color === 'rgb(255, 165, 0)') {
 
-                $(this)
+                $this
                     .text('Soy un párrafo de color Blanco')
                     .css("color", "white")
                     .removeClass('zebra-class')

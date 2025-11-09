@@ -8,27 +8,39 @@
 */
 
 
-/*
-    ----------------------------------------------------------------------------
-    ----------  3. Animaciones Personalizadas y Callback de Funciones ----------
-    ----------------------------------------------------------------------------
-*/
-
-.main__animaciones-personalizadas {
-    max-width: 102.4rem;
-    width: 100%;
-    min-height: 46rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    text-align: center;
+.layout__main {
+    overflow-x: auto;
 }
 
-.btn__container3 {
+.layout__main::-webkit-scrollbar {
+    height: 10px;
+}
+
+.layout__main::-webkit-scrollbar-thumb {
+    background: #9ca3af;
+    border-radius: 8px;
+}
+
+.layout__main::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+.main__section {
+    min-width: 120rem;
+    height: 40rem;
+    margin-left: 30rem;
+    overflow-x: auto;
+}
+
+@media (min-width: 768px) {
+    .main__section {
+        margin-left: 0;
+    }
+}
+
+.section__btn-container {
     margin-top: 1rem;
+    margin-left: -30rem;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -37,21 +49,23 @@
     gap: 2rem;
 }
 
-/*
-    ------------------------------------------------
-    ----------  4. Callback en Funciones  ----------
-    ------------------------------------------------
-*/
-
-.main__callback-en-funciones {
-    max-width: 102.4rem;
-    width: 100%;
-    min-height: 46rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem;
-    border-radius: 0.5rem;
-    text-align: center;
+@media (min-width: 768px) {
+    .section__btn-container {
+        margin-left: 0;
+    }
 }
+
+#caja  {
+    margin-top: 2rem;
+    margin-left: -42rem;
+    padding: 2rem 4rem;
+    border: 5px dashed black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ccc;
+    color: black;
+    font-size: 1.6rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+

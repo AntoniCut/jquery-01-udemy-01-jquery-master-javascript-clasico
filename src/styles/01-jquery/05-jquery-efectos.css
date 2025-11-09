@@ -8,11 +8,6 @@
 */
 
 
-/*
-    ----------------------------------
-    ----------  2. Efectos  ----------
-    ----------------------------------
-*/
 
 .main__section {
     max-width: 120rem;
@@ -106,8 +101,4 @@ button {
     color: black;
     font-size: 1.6rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-#caja2 {
-    margin-left: -42rem;
 }
