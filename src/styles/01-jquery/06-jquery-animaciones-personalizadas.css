@@ -8,64 +8,52 @@
 */
 
 
-.layout__main {
-    overflow-x: auto;
-}
-
-.layout__main::-webkit-scrollbar {
-    height: 10px;
-}
-
-.layout__main::-webkit-scrollbar-thumb {
-    background: #9ca3af;
-    border-radius: 8px;
-}
-
-.layout__main::-webkit-scrollbar-track {
-    background: #f3f4f6;
-}
-
 .main__section {
-    min-width: 120rem;
+    width: 100%;
+    max-width: 120rem;
     height: 40rem;
-    margin-left: 30rem;
-    overflow-x: auto;
 }
 
-@media (min-width: 768px) {
-    .main__section {
-        margin-left: 0;
-    }
+/*  -----  Contenedor de animación (más ancho que el viewport)  -----  */
+.section__container-animation {
+    width: 100%;
+    height: 100%;
 }
 
 .section__btn-container {
     margin-top: 1rem;
-    margin-left: -30rem;
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
 }
 
-@media (min-width: 768px) {
-    .section__btn-container {
-        margin-left: 0;
-    }
-}
-
-#caja  {
-    margin-top: 2rem;
-    margin-left: -42rem;
-    padding: 2rem 4rem;
-    border: 5px dashed black;
-    display: flex;
+/*  -----  Caja animada  -----  */
+#caja {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    background: #ccc;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    padding: 1rem 2rem;
+    border: 2px dashed black;
     color: black;
-    font-size: 1.6rem;
+    background: #ccc;
+    font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@media (min-width: 768px) {
+
+    #caja {
+        margin-top: 2rem;
+        margin-left: 5rem;
+        padding: 2rem 4rem;
+        border: 5px dashed black;
+        color: black;
+        background: #ccc;
+        font-size: 1.6rem;
+    }
+
+}
