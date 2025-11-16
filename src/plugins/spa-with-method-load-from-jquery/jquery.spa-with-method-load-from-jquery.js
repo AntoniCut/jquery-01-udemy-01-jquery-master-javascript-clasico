@@ -6,9 +6,9 @@
 
 
 /**
- *  - Este plugin permite cargar contenido dinámico en una aplicación SPA utilizando jQuery.
- *  - Envuelve el plugin en una función de módulos ES6 para facilitar su integración.
- *  @function `spaWithMethodLoadFromJQueryPlugins`
+ *  - Este plugin `spaWithMethodLoadFromJQueryPlugins` permite cargar contenido dinámico 
+ *    en una aplicación SPA utilizando el método `load` de jQuery.
+ *  - Envuelve el plugin en una función de `Módulos ES6` para facilitar su integración.
  */
 
 export const spaWithMethodLoadFromJQueryPlugins = () => {
@@ -18,6 +18,11 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
     //  ----------  Encapsulación del plugin por si lo implementamos fuera de un modulo  ----------
     //  -------------------------------------------------------------------------------------------
 
+    /**
+     * - Encapsula el plugin dentro de una función anónima autoejecutable para evitar conflictos en el ámbito global.
+     * @param {JQueryStatic} $ - El objeto jQuery.
+     */
+    
     (function ($) {
 
 
@@ -99,13 +104,37 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
 
             const init = () => {
 
-                // Elimina barra final del pathname
+                
+                /**
+                 * - normalizedPath - Ruta actual sin el prefijo `settings.base`.
+                 * - Se elimina la barra final del pathname para normalizar la ruta.
+                 * @type {string} 
+                 */
                 const normalizedPath = window.location.pathname.replace(/\/$/, '').replace(settings.base, '');
+                
+                /**
+                 * - La ruta correspondiente a la `ruta inicial`.
+                 * @import { Route } from '../../types/route-types.js'
+                 * @type {Route|undefined}
+                 */
                 const initialRoute = settings.routes.find(route =>
                     route.path.replace(/\/$/, '') === normalizedPath
                 );
 
-                if (initialRoute) loadContent(initialRoute);
+                if (initialRoute)
+                    loadContent(initialRoute);
+                
+                else {
+                
+                    /**
+                     * - La ruta correspondiente a la `página 404`.
+                     * @type {Route|undefined}
+                     */
+                    const route404 = settings.routes.find(route => route.id === '404');
+                    if (route404) 
+                        loadContent(route404);
+                }
+
 
                 history.replaceState({ path: window.location.pathname }, '', window.location.pathname);
             };
@@ -117,11 +146,8 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
             //  --------------------------------------------------------------------
 
             /**
-             * @function draggableComponentsHtml
-             * @description Hacemos los menús arrastrables
-             * @returns {void}
+             * - `Función` que hace los `Menus Arrastables`
              */
-
             const draggableComponentsHtml = () => {
 
                 //  ----------  Hacemos los menús arrastrables  ----------
@@ -137,11 +163,10 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
             //  ------------------------------------------------------------------
 
             /**
-             *  - Maneja la carga de contenido para una ruta específica utilizando la API ViewTransition si está disponible,
-             *    o un método clásico si no lo está. 
-             *  - Determina el método de transición y delega la carga del contenido. 
-             *  @function `loadContent`
-             *  @import { Route } from '../../types/route-types.js';
+             *  - `Función` que maneja la carga de contenido para una ruta específica utilizando la `API ViewTransition` 
+             *     si está disponible, o un método clásico si no lo está. 
+             *  -  Determina el método de transición y delega la carga del contenido. 
+             *  @import { Route } from '../../types/route-types.js'
              *  @param {Route} route - Objeto de configuración de la ruta a cargar.
              */
 
@@ -161,7 +186,7 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
             //  -------------------------------------------------------------------------------------
 
             /**
-             * - `Función que maneja la carga de contenido utilizando la API ViewTransition`.
+             * - `Función` que maneja la carga de contenido `utilizando` la `API ViewTransition`.
              *  @param {Route} route - Objeto de configuración de la ruta a cargar.
              *  @return {Promise<void>} - `Promesa` que se resuelve cuando todo el contenido se ha cargado correctamente.
              */
@@ -187,8 +212,7 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
             //  -------------------------------------------------------------------------------------
 
             /**
-             * @function `loadContentWithoutViewTransition`
-             * - Maneja la carga de contenido sin utilizar la API ViewTransition.
+             * - `Función` que maneja la carga de contenido `sin utilizar` la `API ViewTransition`.
              * @param {Route} route - Objeto de configuración de la ruta a cargar.
              */
 
@@ -284,7 +308,7 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
 
                     //  -----  Actualizamos la URL de la Página  -----
                     const newUrl = `${settings.base}${route.path}`;
-                    
+
                     if (window.location.pathname !== newUrl) {
                         history.pushState({ path: newUrl }, '', newUrl);
                     }
@@ -313,10 +337,9 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
             //  --------------------------------------------------------
 
             /**
-             * @function updateFavicon
-             * @description Actualiza el favicon de la página.
+             
+             * - `Función` que actualiza el `favicon` de la página.
              * @param {string} favicon - La URL del nuevo favicon.
-             * @returns {void}
              */
 
             const updateFavicon = favicon => {
@@ -336,18 +359,16 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
             //  ------------------------------------------------------------------
 
             /**
-             * @function loadStylesheet
-             * @description Carga un archivo CSS en la página.
+             * - `Función` que carga un `archivo CSS` en la página.
              * @param {string} cssFile - La URL del archivo CSS a cargar.
-             * @returns {void}
              */
 
             const loadStylesheet = cssFile => {
-                
+
                 //  -----  Elimina los CSS de páginas anteriores,  -------- 
                 //  -----  excepto layout-header.css (que es global)  -----
 
-                
+
                 $('link[data-page-style="true"]').remove();
 
                 //  -----  Crea el nuevo link  -----
@@ -358,7 +379,7 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
                         'data-page-style': 'true'
                     })
                     .appendTo('head');
-           };
+            };
 
 
             //  ------------------------------------------------------------------
@@ -366,10 +387,8 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
             //  ------------------------------------------------------------------
 
             /**
-             * @function loadScriptsIfExists
-             * @description Carga un script si este existe.
+             * - `Función` que carga un `script` si este existe.
              * @param {string} scriptUrl - La URL del script a cargar.
-             * @returns {void}
              */
 
             const loadScriptsIfExists = scriptUrl => {
@@ -401,9 +420,7 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
             // ------------------------------------------------------
 
             /**
-             * @function actionsNavbar
-             * @description Función para manejar las acciones del menú de navegación.
-             * @returns {void}
+             * - `Función` para manejar las `acciones` del `menú de navegación`.
              */
 
             const actionsNavbar = () => {
@@ -490,6 +507,11 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
                 if (route)
                     loadContent(route);
 
+                else {
+                    const route404 = settings.routes.find(route => route.id === '404');
+                    if (route404) loadContent(route404);
+                }
+
             });
 
 
@@ -513,6 +535,12 @@ export const spaWithMethodLoadFromJQueryPlugins = () => {
 
                 if (matchedRoute)
                     loadContent(matchedRoute);
+                
+                else {
+                    const route404 = settings.routes.find(route => route.id === '404');
+                    if (route404) loadContent(route404);
+                }
+
 
             });
 

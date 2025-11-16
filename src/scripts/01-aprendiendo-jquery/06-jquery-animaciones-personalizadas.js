@@ -72,7 +72,6 @@
                 }, 'slow', 
                 
                     function () {
-
                         setTimeout(() => alert('Animación terminada en Tablet y Móvil'), 500);
                     });
 

@@ -9,16 +9,20 @@
 */
 
 
+/**
+ * @typedef {import('./route-types.js').Route} Route
+ */
+
 //  ----------  Esto asegura que VS Code lo trate como módulo  ----------
 export {}; 
 
 
 /**
  *  - Objeto que define la configuración que le pasamos al plugin `spaWithMethodLoadFromJQuery`
- * @import { Route } from './route-types.js'
  * 
  * @typedef {Object} ConfigOptionsSPA
- * @property {Array<Route>} routes - Conjunto de rutas definidas para la SPA.
+ * 
+ * @property {Route[]} routes - Conjunto de rutas definidas para la SPA.
  * @property {string} base - Ruta base de la aplicación (se deja vacía si no se usa `history.pushState` o hash routing).
  * @property {string} layoutHeader - Selector CSS del contenedor de la cabecera.
  * @property {string} layoutNavbar - Selector CSS del contenedor de la barra de navegación.
