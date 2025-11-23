@@ -1,7 +1,14 @@
-//  ----------------------------------------------------
-//  ----------  /load-jquery-by-cdn-local.js  ----------
-//  ----------------------------------------------------
+/*  
+    ----------------------------------------------------
+    ----------  /jquery/load/  -------------------------
+    ----------  /load-jquery-by-cdn-local.js  ----------
+    ----------------------------------------------------
+*/
 
+
+/**
+ * @typedef {import('../types/cdn-jquery-types.js').CDNJQuery} CDNJQuery
+ */
 
 
 import { loadJQueryByCdn } from './load-jquery-by-cdn.js';
@@ -11,7 +18,6 @@ import { loadJQueryByLocal } from './load-jquery-by-local.js';
 
 /** 
  *  - `Carga jQuery desde un CDN con fallback a local si falla`
- *  @import  {CDNJQuery} from '../../../types/cdn-types.js';
  *  @param {CDNJQuery|null} cdnJQuery 
  *  @param {string} localJQuery 
  *  @returns {Promise<JQueryStatic>}

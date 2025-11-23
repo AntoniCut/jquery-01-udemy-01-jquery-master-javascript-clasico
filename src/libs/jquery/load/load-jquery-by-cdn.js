@@ -1,15 +1,22 @@
-//  ----------------------------------------------
-//  ----------  /load-jquery-by-cdn.js  ----------
-//  ----------------------------------------------
+/*  
+    ----------------------------------------------
+    ----------  /jquery/load/  -------------------
+    ----------  /load-jquery-by-cdn.js  ----------
+    ----------------------------------------------
+*/
 
+
+/**
+ * @typedef {import('../types/cdn-jquery-types.js').CDNJQuery} CDNJQuery
+ */
 
 
 import { loadJQueryByLocal } from "./load-jquery-by-local.js";
 
 
 
-/** - `Carga jQuery desde un CDN`
- * @import  {CDNJQuery} from '../../../types/cdn-types.js';
+/** 
+ * - `Carga jQuery desde un CDN`
  * @param {CDNJQuery} cdnJQuery 
  * @param {string} localJQuery 
  * @param {Function} resolve 

@@ -1,18 +1,21 @@
 /*
-    ----------------------------------------------------------------------
-    ----------  /jquery.antonydev.tech/  ---------------------------------
-    ----------  /01-udemy/01-jquery-master-javascript-clasico/  ----------
-    ----------  /gulpfile.js  --------------------------------------------
-    ----------------------------------------------------------------------
-    
-    ⚡ -----  Versión con módulos ES + exclusiones  -----
+    -------------------------------------------------------------
+    ----------  /jquery.antonydev.tech/  ------------------------
+    ----------  /01-udemy/  -------------------------------------
+    ----------  /01-jquery-master-javascript-clasico/  ----------
+    ----------  /gulpfile.js  -----------------------------------
+    -------------------------------------------------------------
 */
+
+// ⚡ -----  Versión con módulos ES + exclusiones  -----
+
 
 import gulp from "gulp";
 import terser from "gulp-terser";
 import cleanCSS from "gulp-clean-css";
 import htmlmin from "gulp-htmlmin";
 import { deleteAsync } from "del";
+
 
 
 // 📌  -----  Carpetas/archivos a excluir en TODAS las tareas  -----

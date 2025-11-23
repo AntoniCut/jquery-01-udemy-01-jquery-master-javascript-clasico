@@ -1,8 +1,9 @@
 /*
     -----------------------------------------------------------------------
     ----------  /jquery.antonydev.tech/  ----------------------------------
-    ----------  /01-udemy-01-jquery-master-javascript-clasico/  -----------
-    ----------  /src/scripts/  --------------------------------------------
+    ----------  /01-udemy/  -----------------------------------------------
+    ----------  /01-jquery-master-javascript-clasico/  --------------------
+    ----------  /src/spa/  ------------------------------------------------
     ----------  /spa-udemy-jquery-master-javascript-clasico.js/  ----------
     -----------------------------------------------------------------------
 */
@@ -22,7 +23,7 @@ import { routes02AprendiendoJQueryUI } from "../routes/routes-02-aprendiendo-jqu
 
 
 /**  ----------------------------------------------------------------------------------------------------
- *   @function `spaJQueryUdemyMasterJavaScriptClasico`
+ *   -----  `spaJQueryUdemyMasterJavaScriptClasico`  -----
  *   
  * - Inicializa la lógica **SPA** (Single Page Application) para
  *   El Proyecto 01-jquery-master-javascript-clasico del curso de Udemy.
@@ -46,6 +47,7 @@ export const spaUdemyJQueryMasterJavaScriptClasico = () => {
     //  ----------  Documento Cargado  ----------
     console.log('\n');
     console.warn('-----  spa-udemy-jquery-master-javascript-clasico.js  -----');
+    console.log('\n');
 
 
     //  ----------  Arrays con la informacion del contenido a cargar de las rutas del proyecto ----------

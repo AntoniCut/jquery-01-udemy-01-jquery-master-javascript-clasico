@@ -1,11 +1,11 @@
 /*
-    -------------------------------------------------------------
-    ----------  /jquery.antonydev.tech/  ------------------------
-    ----------  /01/udemy/  -------------------------------------
-    ----------  /01-jquery-master-javascript-clasico/  ----------  
-    ----------  /src/types/  ------------------------------------
-    ----------  /config-option-spa-types.js  --------------------
-    -------------------------------------------------------------
+    ------------------------------------------------------------
+    ----------  /jquery.antonydev.tech/  -----------------------
+    ----------  /01-udemy/  ------------------------------------
+    ----------  /01-jquery-master-javascript-clasico/ ----------
+    ----------  /src/types/  -----------------------------------
+    ----------  /config-option-spa-types.js  -------------------
+    ------------------------------------------------------------
 */
 
 
@@ -13,16 +13,16 @@
  * @typedef {import('./route-types.js').Route} Route
  */
 
+
 //  ----------  Esto asegura que VS Code lo trate como módulo  ----------
 export {}; 
 
 
 /**
- *  - Objeto que define la configuración que le pasamos al plugin `spaWithMethodLoadFromJQuery`
+ *  - Objeto que define la `configuración` que le pasamos al plugin `spaWithMethodLoadFromJQuery`
  * 
  * @typedef {Object} ConfigOptionsSPA
- * 
- * @property {Route[]} routes - Conjunto de rutas definidas para la SPA.
+ * @property {Array<Route>} routes - Conjunto de rutas definidas para la SPA.
  * @property {string} base - Ruta base de la aplicación (se deja vacía si no se usa `history.pushState` o hash routing).
  * @property {string} layoutHeader - Selector CSS del contenedor de la cabecera.
  * @property {string} layoutNavbar - Selector CSS del contenedor de la barra de navegación.

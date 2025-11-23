@@ -9,8 +9,12 @@
 
 
 /**
- *  - `Array de objetos de tipo Route` que definen las `rutas de la aplicación SPA` de Aprendiendo jQuery UI.
- *  @import { Route } from '../types/route-types.js'
+ * @typedef {import('../types/route-types.js').Route} Route
+ */
+
+
+/**
+ *  - `Array de objetos de tipo Route` que definen las `rutas de la aplicación SPA`
  *  @type {Route[]}
  */
 
@@ -18,10 +22,10 @@ export const routes02AprendiendoJQueryUI = [
 
     {
         id: 'primerosPasosJQueryUI',
-        urlLayoutHeader: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-header.html',
-        urlLayoutNavbar: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-navbar.html',
+        urlLayoutHeader: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-header.html',
+        urlLayoutNavbar: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-navbar.html',
         urlLayoutMain: '/01-udemy/01-jquery-master-javascript-clasico/src/pages/02-aprendiendo-jquery-ui/01-jquery-ui-primeros-pasos.html',
-        urlLayoutFooter: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-footer.html',
+        urlLayoutFooter: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-footer.html',
         favicon: '/01-udemy/01-jquery-master-javascript-clasico/assets/favicon/jquery-favicon.ico',
         pageTitle: 'Aprendiendo jQuery UI - Primeros Pasos',
         path: '/aprendiendo-jquery-ui/primeros-pasos/',
@@ -34,10 +38,10 @@ export const routes02AprendiendoJQueryUI = [
 
     {
         id: 'interaccionesJQueryUI',
-        urlLayoutHeader: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-header.html',
-        urlLayoutNavbar: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-navbar.html',
+        urlLayoutHeader: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-header.html',
+        urlLayoutNavbar: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-navbar.html',
         urlLayoutMain: '/01-udemy/01-jquery-master-javascript-clasico/src/pages/02-aprendiendo-jquery-ui/02-jquery-ui-interacciones.html',
-        urlLayoutFooter: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-footer.html',
+        urlLayoutFooter: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-footer.html',
         favicon: '/01-udemy/01-jquery-master-javascript-clasico/assets/favicon/jquery-favicon.ico',
         pageTitle: 'Aprendiendo jQuery UI - Interacciones',
         path: '/aprendiendo-jquery-ui/interacciones/',
@@ -50,10 +54,10 @@ export const routes02AprendiendoJQueryUI = [
 
     {
         id: 'animacionesEfectosJQueryUI',
-        urlLayoutHeader: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-header.html',
-        urlLayoutNavbar: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-navbar.html',
+        urlLayoutHeader: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-header.html',
+        urlLayoutNavbar: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-navbar.html',
         urlLayoutMain: '/01-udemy/01-jquery-master-javascript-clasico/src/pages/02-aprendiendo-jquery-ui/03-jquery-ui-animaciones-y-efectos.html',
-        urlLayoutFooter: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-footer.html',
+        urlLayoutFooter: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-footer.html',
         favicon: '/01-udemy/01-jquery-master-javascript-clasico/assets/favicon/jquery-favicon.ico',
         pageTitle: 'Aprendiendo jQuery UI - Animaciones y Efectos',
         path: '/aprendiendo-jquery-ui/animaciones-y-efectos/',
@@ -66,10 +70,10 @@ export const routes02AprendiendoJQueryUI = [
 
     {
         id: 'pluginsWidgetsJQueryUI',
-        urlLayoutHeader: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-header.html',
-        urlLayoutNavbar: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-navbar.html',
+        urlLayoutHeader: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-header.html',
+        urlLayoutNavbar: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-navbar.html',
         urlLayoutMain: '/01-udemy/01-jquery-master-javascript-clasico/src/pages/02-aprendiendo-jquery-ui/04-jquery-ui-plugins-y-widgets.html',
-        urlLayoutFooter: '/01-udemy/01-jquery-master-javascript-clasico/src/components-layout/layout-footer.html',
+        urlLayoutFooter: '/01-udemy/01-jquery-master-javascript-clasico/src/components/layout/layout-footer.html',
         favicon: '/01-udemy/01-jquery-master-javascript-clasico/assets/favicon/jquery-favicon.ico',
         pageTitle: 'Aprendiendo jQuery UI - Plugins y Widgets',
         path: '/aprendiendo-jquery-ui/plugins-y-widgets/',
@@ -79,6 +83,5 @@ export const routes02AprendiendoJQueryUI = [
             '/01-udemy/01-jquery-master-javascript-clasico/src/scripts/02-aprendiendo-jquery-ui/04-jquery-ui-plugins-y-widgets.js'
         ]
     }
-       
     
 ];

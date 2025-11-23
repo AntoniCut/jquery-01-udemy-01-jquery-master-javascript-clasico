@@ -1,7 +1,14 @@
-//  -------------------------------------------------------
-//  ----------  /load-jquery-ui-by-cdn-local.js  ----------
-//  -------------------------------------------------------
+/*  
+    -------------------------------------------------------
+    ----------  /jquery-ui/load/  -------------------------
+    ----------  /load-jquery-ui-by-cdn-local.js  ----------
+    -------------------------------------------------------
+*/
 
+
+/**
+ * @typedef {import('../types/cdn-jquery-ui-types.js').CDNJQueryUI} CDNJQueryUI
+ */
 
 
 import { loadJQueryUIByCdn } from './load-jquery-ui-by-cdn.js';
@@ -11,7 +18,6 @@ import { loadJQueryUIByLocal } from './load-jquery-ui-by-local.js';
 
 /** 
  *  - `Carga jQuery UI desde un CDN con fallback a local si falla`.
- *  @import  {CDNJQueryUI} from '../../../types/cdn-types.js';
  *  @param {CDNJQueryUI|null} cdnJQueryUI 
  *  @param {string} localJQueryUI
  *  @returns {Promise<JQueryStatic>}

@@ -8,12 +8,17 @@
 */
 
 
+/**
+ * @typedef {import('./libs/jquery/types/cdn-jquery-types.js').CDNJQuery} CDNJQuery
+ * @typedef {import('./libs/jquery-ui/types/cdn-jquery-ui-types.js').CDNJQueryUI} CDNJQueryUI
+ */
 
-import { cdnJQuery_4_0_0 } from "./libs/jquery/cdn/cdn-jquery-4.0.0.js";
+
+import { cdnJQuery_4_0_0_min} from './libs/jquery/cdn/cdn-jquery-4.0.0.min.js';
 import { loadJQueryByCdnOLocal } from "./libs/jquery/load/load-jquery-by-cdn-local.js";
 
 
-import { cdnJQueryUI_1_14_1 } from "./libs/jquery-ui/cdn/cdn-jquery-ui-1.14.1.js";
+import { cdnJQueryUI_1_14_1_min } from "./libs/jquery-ui/cdn/cdn-jquery-ui-1.14.1.min.js";
 import { loadJQueryUIByCdnOLocal } from "./libs/jquery-ui/load/load-jquery-ui-by-cdn-local.js";
 
 import { spaWithMethodLoadFromJQueryPlugins } from "./plugins/spa-with-method-load-from-jquery/jquery.spa-with-method-load-from-jquery.js";
@@ -82,16 +87,17 @@ document.addEventListener('DOMContentLoaded', () => {
 */
 
 /**
- *  - Configuración del `CDN de jQuery`.
- *  @import  {CDNJQuery} from './types/cdn-types.js';
- *  @type {CDNJQuery}
+ * - Configuración del `CDN de jQuery`.
+ * @type {CDNJQuery}
  */
-const cdnJQuery = cdnJQuery_4_0_0;
+
+const cdnJQuery = cdnJQuery_4_0_0_min;
 
 /**
  *  - Ruta del `Archivo jQuery local` a usar como fallback si el CDN falla.
  *  @type {string}
  */
+
 const localJQuery = "./libs/jquery/local/jquery-4.0.0-beta.min.js";
 
 
@@ -104,10 +110,11 @@ const localJQuery = "./libs/jquery/local/jquery-4.0.0-beta.min.js";
 
 /**
  *  - Configuración del `CDN de jQuery UI`.
- *  @import  {CDNJQueryUI} from './types/cdn-types.js';
  *  @type {CDNJQueryUI}
  */
-const cdnJQueryUI = cdnJQueryUI_1_14_1;
+
+const cdnJQueryUI = cdnJQueryUI_1_14_1_min;
+
 
 /**
  *  - Ruta del `Archivo jQuery UI local` a usar como fallback si el CDN falla.

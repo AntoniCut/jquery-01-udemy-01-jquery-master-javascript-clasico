@@ -1,7 +1,14 @@
-//  -------------------------------------------------
-//  ----------  /load-jquery-ui-by-cdn.js  ----------
-//  -------------------------------------------------
+/*  
+    -------------------------------------------------
+    ----------  /jquery-ui/load/  -------------------
+    ----------  /load-jquery-ui-by-cdn.js  ----------
+    -------------------------------------------------
+*/
 
+
+/**
+ * @typedef {import('../types/cdn-jquery-ui-types.js').CDNJQueryUI} CDNJQueryUI
+ */
 
 
 import { loadJQueryUIByLocal } from './load-jquery-ui-by-local.js';
@@ -10,7 +17,6 @@ import { loadJQueryUIByLocal } from './load-jquery-ui-by-local.js';
 
 /** 
  *  - `Carga jQuery desde un CDN`.
- *  @import  {CDNJQueryUI} from '../../../types/cdn-types.js';
  *  @param {CDNJQueryUI} cdnJQueryUI 
  *  @param {string} localJQueryUI 
  *  @param {Function} resolve 
